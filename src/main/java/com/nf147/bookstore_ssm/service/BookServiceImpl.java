@@ -14,6 +14,6 @@ public class BookServiceImpl implements BookService {
     @Override
     public Book getBookById(int bookid) {
         System.out.println("开始查询...");
-        return bookDAO.getBook(bookid);
+        return bookDAO.getById(bookid);
     }
 }
