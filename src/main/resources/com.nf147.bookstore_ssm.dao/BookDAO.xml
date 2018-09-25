@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.nf147.bookstore_ssm.dao.BookDAO">
+    <select id="getBook" parameterType="int" resultType="com.nf147.bookstore_ssm.entity.Book">
+            select bookid, name, cnt from ssm_book where bookid = #{bookid}
+    </select>
+
+    <select id="getAll" resultType="com.nf147.bookstore_ssm.entity.Book">
+        select bookid, name, cnt from ssm_book
+    </select>
+
+    <update id="updateCnt" parameterType="int">
+        update ssm_book set cnt = cnt + 1 where bookid = #{bookid}
+    </update>
+</mapper>
