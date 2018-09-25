@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 public class BookServiceImpl implements BookService {
 
     @Autowired
-    BookDAO bookDAO = null;
+    private BookDAO bookDAO;
 
     @Override
     public Book getBookById(int bookid) {

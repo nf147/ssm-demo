@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
+@RequestMapping("/book")
 public class BookController {
 
     @Autowired
@@ -18,7 +19,7 @@ public class BookController {
     @Autowired
     private BookDAO bookDAO;
 
-    @RequestMapping("/book")
+    @RequestMapping("")
     public ModelAndView getBook(int bookid) {
         ModelAndView mv = new ModelAndView("book_detail");
         Book book = bookService.getBookById(bookid);
@@ -26,7 +27,7 @@ public class BookController {
         return mv;
     }
 
-    @RequestMapping("/bookupdate")
+    @RequestMapping("/inc")
     public String update(int bookid) {
         for (int i = 0; i < 10000; i++) {
             bookDAO.updateCnt(bookid);
