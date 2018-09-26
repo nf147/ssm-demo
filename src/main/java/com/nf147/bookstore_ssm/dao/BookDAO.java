@@ -44,4 +44,9 @@ public interface BookDAO {
      */
     int delete(int bookid);
 
+    int getBookCount();
+
+    int getBookAvg();
+
+    List<Book> getMaxCountTwo();
 }

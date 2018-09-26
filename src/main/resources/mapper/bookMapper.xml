@@ -31,4 +31,16 @@
     <select id="listAllPager" resultType="com.nf147.bookstore_ssm.entity.Book">
         select bookid, name, cnt from ssm_book limit #{offset}, #{size}
     </select>
+
+    <select id="getBookCount" resultType="int">
+        select count(*) from ssm_book
+    </select>
+
+    <select id="getBookAvg" resultType="java.lang.Integer">
+
+        select avg(cnt) from ssm_book
+    </select>
+    <select id="getMaxCountTwo" resultType="com.nf147.bookstore_ssm.entity.Book">
+        select * from ssm_book order by cnt desc limit 2
+    </select>
 </mapper>
