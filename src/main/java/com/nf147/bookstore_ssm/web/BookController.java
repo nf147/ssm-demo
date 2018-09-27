@@ -28,6 +28,9 @@ public class BookController {
     public ModelAndView getBook(@PathVariable("id") int bookid) {
         ModelAndView mv = new ModelAndView("book_detail");
         Book book = bookService.getBookById(bookid);
+
+        System.out.println(book);
+
         mv.addObject("book", book);
         return mv;
     }
@@ -35,6 +38,9 @@ public class BookController {
     @RequestMapping("/books")
     public String list(Model model) {
         List<Book> books = bookDAO.listAll();
+
+        System.out.println("总共有这些书: " + books.size());
+
         model.addAttribute("books", books);
         return "book_list";
     }
