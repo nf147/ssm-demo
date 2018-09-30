@@ -1,5 +1,7 @@
 package com.nf147.bookstore_ssm.dao;
 
+import org.apache.commons.logging.LogFactory;
+import org.apache.log4j.Logger;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,13 +17,15 @@ public class BookDAOTest {
     @Autowired
     BookDAO bookDAO;
 
+    private Logger logger = Logger.getLogger(BookDAOTest.class);
+
     @Test
     public void getById() {
-        System.out.println(bookDAO.getById(2));
+        logger.debug(bookDAO.getById(2));
     }
 
     @Test
     public void listAll() {
-        System.out.println(bookDAO.listAll());
+        logger.debug(bookDAO.listAll());
     }
 }
